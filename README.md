@@ -81,7 +81,11 @@ disagreement vs. consensus), and analysis.
 
 - Base model: Qwen2.5-Math-7B-Instruct
 - Data: OpenR1-Math-220k, filtered to a 16,384-token cutoff (~91K samples remaining)
-- Training configuration: follows [open-r1/OpenR1-Qwen-7B](https://huggingface.co/open-r1/OpenR1-Qwen-7B)
+- Training configuration: follows [open-r1/OpenR1-Qwen-7B](https://huggingface.co/open-r1/OpenR1-Qwen-7B); see [huggingface/open-r1#545](https://github.com/huggingface/open-r1/issues/545)
+  for background. The original recipe file
+  (`recipes/OpenR1-Qwen-7B/sft/config.yaml` in the open-r1 repo) is not
+  available at that path as of writing; we recall referencing it from an
+  open-r1 issue/PR but could not relocate the exact link
 - "Full Data" in the results table above is the official OpenR1-Qwen-7B checkpoint, not a run we trained ourselves
 - RMI scoring models: strong = Qwen2.5-Math-7B-Instruct, weak = Qwen2.5-Math-1.5B-Instruct, same 10-bin stratification as the code domain
 - Evaluation: MATH-500, GPQA-Diamond, pass@1, via LightEval
