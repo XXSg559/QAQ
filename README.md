@@ -77,6 +77,15 @@ disagreement vs. consensus), and analysis.
 - RMI scoring models: strong = DeepSeek-Coder-6.7B-Base, weak = Qwen3-0.6B
 - Evaluation: HumanEval, HumanEval+, MBPP, MBPP+, greedy decoding (pass@1)
 
+### Reproducing the math domain setup
+
+- Base model: Qwen2.5-Math-7B-Instruct
+- Data: OpenR1-Math-220k, filtered to a 16,384-token cutoff (~91K samples remaining)
+- Training configuration: follows [open-r1/OpenR1-Qwen-7B](https://huggingface.co/open-r1/OpenR1-Qwen-7B)
+- "Full Data" in the results table above is the official OpenR1-Qwen-7B checkpoint, not a run we trained ourselves
+- RMI scoring models: strong = Qwen2.5-Math-7B-Instruct, weak = Qwen2.5-Math-1.5B-Instruct, same 10-bin stratification as the code domain
+- Evaluation: MATH-500, GPQA-Diamond, pass@1, via LightEval
+
 ## Requirements
 
 ```
