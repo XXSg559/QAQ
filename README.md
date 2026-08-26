@@ -87,7 +87,11 @@ disagreement vs. consensus), and analysis.
   available at that path as of writing; we recall referencing it from an
   open-r1 issue/PR but could not relocate the exact link
 - "Full Data" in the results table above is the official OpenR1-Qwen-7B checkpoint, not a run we trained ourselves
-- RMI scoring models: strong = Qwen2.5-Math-7B-Instruct, weak = Qwen2.5-Math-1.5B-Instruct, same 10-bin stratification as the code domain
+- RMI scoring models: strong = Qwen2.5-Math-7B (base), weak = Qwen2.5-Math-1.5B (base), same 10-bin stratification as the code domain.
+  These are base checkpoints without a `chat_template`, so running
+  `rmi_math.py` on them requires `--tokenizer` pointing at the
+  corresponding instruct sibling (e.g. `Qwen/Qwen2.5-Math-7B-Instruct` /
+  `Qwen/Qwen2.5-Math-1.5B-Instruct`) to borrow a template from
 - Evaluation: MATH-500, GPQA-Diamond, pass@1, via LightEval
 - Checkpoint selection: training on the noisy WarriorCoder data is less
   stable across steps, so code-domain results select the best checkpoint
