@@ -4,7 +4,7 @@ Code accompanying:
 
 > Jiayin Lei, Ming Ma, Yunxi Duan, Chenxi Li, Tianming Yang.
 > **QAQ: Bidirectional Semantic Coherence for Selecting High-Quality Synthetic Code Instructions.**
-> EMNLP 2026 (Main).
+> EMNLP 2026 (Main track).
 
 ## Method
 
@@ -58,6 +58,24 @@ MATH-500 / GPQA-Diamond):
 
 See the paper for the full set of results, ablations (stratification,
 disagreement vs. consensus), and analysis.
+
+### Reproducing the WarriorCoder fine-tuning
+
+- Base model: DeepSeek-Coder-6.7B-Base
+- Data: a reproduction of WarriorCoder (329K instruction-response pairs),
+  filtered to samples under 2048 tokens (~310K remaining)
+- Framework: LlamaFactory, 3 epochs
+- LR scheduler: cosine decay, warmup ratio 0.2
+- Batch size / learning rate scale with the selected data size:
+
+  | Data size | Batch size | Learning rate |
+  |---|---|---|
+  | 100% | 512 | 1.2e-4 |
+  | 50% | 256 | 0.8e-4 |
+  | 25% | 256 | 0.4e-4 |
+
+- RMI scoring models: strong = DeepSeek-Coder-6.7B-Base, weak = Qwen3-0.6B
+- Evaluation: HumanEval, HumanEval+, MBPP, MBPP+, greedy decoding (pass@1)
 
 ## Requirements
 
