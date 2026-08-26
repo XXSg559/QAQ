@@ -98,11 +98,4 @@ selected = df.nlargest(int(len(df) * 0.25), "diff")
 
 ## Citation
 
-```bibtex
-@inproceedings{lei2025qaq,
-  title     = {QAQ: Bidirectional Semantic Coherence for Selecting High-Quality Synthetic Code Instructions},
-  author    = {Lei, Jiayin and Ma, Ming and Duan, Yunxi and Li, Chenxi and Yang, Tianming},
-  booktitle = {Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics},
-  year      = {2025}
-}
-```
+Coming soon.
