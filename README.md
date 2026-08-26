@@ -4,7 +4,7 @@ Code accompanying:
 
 > Jiayin Lei, Ming Ma, Yunxi Duan, Chenxi Li, Tianming Yang.
 > **QAQ: Bidirectional Semantic Coherence for Selecting High-Quality Synthetic Code Instructions.**
-> ACL 2025.
+> EMNLP 2026 (Main).
 
 ## Method
 
