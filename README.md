@@ -89,11 +89,11 @@ disagreement vs. consensus), and analysis.
 - "Full Data" in the results table above is the official OpenR1-Qwen-7B checkpoint, not a run we trained ourselves
 - RMI scoring models: strong = Qwen2.5-Math-7B-Instruct, weak = Qwen2.5-Math-1.5B-Instruct, same 10-bin stratification as the code domain
 - Evaluation: MATH-500, GPQA-Diamond, pass@1, via LightEval
-- Checkpoint selection: math domain results use the **last training step**
-  for every method, not the best checkpoint. This differs from the code
-  domain, where checkpoints are selected by best validation performance
-  (see the ablation table in the paper). Keep this in mind when comparing
-  numbers across domains or reproducing either one.
+- Checkpoint selection: training on the noisy WarriorCoder data is less
+  stable across steps, so code-domain results select the best checkpoint
+  for each method. Math-domain training (following the OpenR1-Qwen-7B
+  recipe) is more stable across steps, so we report the final training
+  step for every method there instead.
 
 ## Requirements
 
